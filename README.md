@@ -1,91 +1,95 @@
-# Calidad de datos FinTech — 50 registros en Excel
+# FinTech Data Quality — 50 Excel Records
 
-## Descripción
+## Overview
 
-Mini proyecto de práctica de **limpieza, validación y documentación de calidad de datos** sobre 50 registros ficticios de pagos y productos financieros.
+This beginner-level portfolio project demonstrates **data cleaning, validation, and data quality documentation** using 50 fictional payment and financial product records in Microsoft Excel.
 
-El objetivo es identificar inconsistencias en los datos, comprobar reglas básicas de calidad y documentar los casos que requieren confirmación, sin inventar ni reemplazar importes faltantes.
+The goal is to identify inconsistencies, apply basic data quality checks, and document cases that require clarification **without inventing or replacing missing amounts**.
 
-> **Aviso:** los registros son ficticios y se utilizan exclusivamente con fines de aprendizaje y portafolio. No representan transacciones ni clientes reales.
+> **Privacy note:** All records are fictional and intended solely for learning and portfolio demonstration. They do not represent real customers or transactions.
 
-## Herramientas y funciones
+## Tools and Excel Functions
 
-- **Microsoft Excel** para la organización, limpieza y revisión de registros.
-- **ESPACIOS** para quitar espacios adicionales en campos de texto.
-- **SI** y **O** para aplicar reglas de validación.
-- **CONTAR.SI** para calcular indicadores del reporte.
-- Comprobaciones y documentación manual de hallazgos.
+- **Microsoft Excel** for organizing, cleaning, and reviewing records.
+- **ESPACIOS** (TRIM) to remove extra spaces from text.
+- **SI** (IF) and **O** (OR) for validation rules.
+- **CONTAR.SI** (COUNTIF) for summary indicators.
+- Manual quality checks and findings documentation.
 
-## Estructura del archivo
+*Excel function names above are shown in Spanish because that is the language used in the original workbook.*
 
-El libro `FinTech_Calidad_Datos_50_Portafolio.xlsx` contiene seis hojas:
+## Workbook Structure
 
-| Hoja | Propósito |
+The file `FinTech_Calidad_Datos_50_Portafolio.xlsx` contains six worksheets. Their original Spanish names are retained here so readers can find them in the workbook.
+
+| Worksheet | Purpose |
 | --- | --- |
-| `Instrucciones` | Objetivo, pasos del ejercicio y fórmulas de referencia. |
-| `Resumen` | Indicadores de calidad y comprobaciones de resultados. |
-| `Pagos_50_Original` | Versión de referencia del ejercicio; conserva fórmulas y comprobaciones previas que no deben confundirse con la validación final. |
-| `Pagos_50_Limpio` | Hoja principal de trabajo con limpieza de texto, validaciones y comprobación por registro. |
-| `Hallazgos` | Registro de las cinco incidencias de monto y las acciones recomendadas. |
-| `Solución` | Referencias y ejemplos de las fórmulas utilizadas. |
+| `Instrucciones` | Exercise goals, steps, and formula references. |
+| `Resumen` | Data quality indicators and result checks. |
+| `Pagos_50_Original` | Reference version containing formulas and earlier checks; these should not be mistaken for the final validation. |
+| `Pagos_50_Limpio` | Main working sheet with text cleaning, validation rules, and record-level checks. |
+| `Hallazgos` | Documentation of five amount-related issues and recommended actions. |
+| `Solución` | References and examples of formulas used. |
 
-## Procedimiento
+## Workflow
 
-1. Revisar los campos capturados y crear columnas de texto limpio con `ESPACIOS`.
-2. Validar el estatus contra cuatro valores permitidos: **Aprobada, Pendiente, Rechazada y Cancelada**.
-3. Marcar como **Revisar** los montos vacíos o iguales a cero.
-4. Comprobar cada registro mediante las columnas de calidad y comprobación.
-5. Resumir los resultados con `CONTAR.SI` y documentar los casos que requieren seguimiento.
+1. Review the input fields and create cleaned-text columns using `ESPACIOS`.
+2. Validate payment status against four allowed Spanish values: **Aprobada (Approved), Pendiente (Pending), Rechazada (Rejected), and Cancelada (Cancelled)**.
+3. Flag missing or zero amounts as **Revisar (Review)**.
+4. Check each record using the quality and verification columns.
+5. Summarize the results using `CONTAR.SI` and document items requiring follow-up.
 
-**Alcance de la limpieza:** `ESPACIOS` corrige espacios adicionales, pero no normaliza por sí sola el uso de mayúsculas y minúsculas. La revisión de estatus del ejercicio se realiza con las reglas documentadas en el archivo.
+**Cleaning scope:** `ESPACIOS` removes extra spaces but does not independently standardize letter case. Status checks follow the rules documented in the workbook.
 
-## Resultados
+## Results
 
-| Indicador | Resultado |
+| Metric | Result |
 | --- | ---: |
-| Registros analizados | 50 |
-| Estatus válidos | 50 |
-| Estatus por revisar | 0 |
-| Montos válidos | 45 |
-| Montos por revisar | 5 |
-| Pagos con estatus `Cancelada` | 6 |
+| Records reviewed | 50 |
+| Valid status values | 50 |
+| Status values requiring review | 0 |
+| Valid amounts | 45 |
+| Amounts requiring review | 5 |
+| Payments with status `Cancelada` | 6 |
 
-### Hallazgos de monto
+### Amount-Related Findings
 
-Se documentaron **cinco registros que requieren confirmación**:
+**Five records require clarification:**
 
-| Fila en `Pagos_50_Limpio` | Hallazgo | Acción recomendada |
+| Row in `Pagos_50_Limpio` | Finding | Recommended action |
 | --- | --- | --- |
-| 9 | Monto de $0.00 | Confirmar si el importe es válido para la operación. |
-| 18 | Monto vacío | Solicitar el importe o confirmar si debe permanecer vacío. |
-| 30 | Monto vacío | Solicitar el importe o confirmar si debe permanecer vacío. |
-| 42 | Monto vacío | Solicitar el importe o confirmar si debe permanecer vacío. |
-| 49 | Monto de $0.00 | Confirmar si el importe es válido para la operación. |
+| 9 | Amount is $0.00 | Confirm whether zero is valid for this transaction. |
+| 18 | Missing amount | Request the amount or confirm that it should remain blank. |
+| 30 | Missing amount | Request the amount or confirm that it should remain blank. |
+| 42 | Missing amount | Request the amount or confirm that it should remain blank. |
+| 49 | Amount is $0.00 | Confirm whether zero is valid for this transaction. |
 
-**Criterio aplicado:** los montos sospechosos se marcaron para revisión; no se sustituyeron por cifras supuestas.
+**Handling rule:** Suspicious amounts were flagged for review, not replaced with assumed values.
 
-## Aprendizajes demostrados
+## Skills Demonstrated
 
-- Uso de fórmulas básicas de limpieza y validación en Excel.
-- Detección de valores faltantes y montos en cero.
-- Construcción de un resumen cuantitativo de calidad de datos.
-- Registro de hallazgos con observaciones y acciones sugeridas.
-- Separación entre una hoja de referencia, la hoja de trabajo y la documentación.
+- Basic Excel text cleaning and validation formulas.
+- Detection of missing values and zero amounts.
+- Quantitative data quality summaries.
+- Structured documentation of findings and suggested next steps.
+- Separation of reference data, working data, and supporting documentation.
 
-## Limitaciones y siguientes mejoras
+## Limitations and Potential Improvements
 
-Este es un **proyecto introductorio de práctica**, no una auditoría financiera ni un sistema automatizado de producción. La hoja `Pagos_50_Original` conserva comprobaciones de una etapa anterior; para interpretar los resultados finales deben consultarse `Pagos_50_Limpio`, `Resumen` y `Hallazgos`.
+This is an **introductory practice project**, not a financial audit or a production-ready automated system.
 
-Como siguientes mejoras se pueden explorar la normalización explícita de mayúsculas/minúsculas, reglas adicionales de validación y un flujo reproducible con Power Query.
+The `Pagos_50_Original` worksheet includes checks from an earlier stage. For the final results, refer to `Pagos_50_Limpio`, `Resumen`, and `Hallazgos`.
 
-## Cómo revisar el proyecto
+Potential improvements include explicit text-case normalization, additional validation rules, and a reproducible Power Query workflow.
 
-1. Descargar y abrir `FinTech_Calidad_Datos_50_Portafolio.xlsx` en Microsoft Excel.
-2. Consultar `Instrucciones` para conocer el objetivo y las reglas.
-3. Revisar los registros y validaciones en `Pagos_50_Limpio`.
-4. Consultar `Resumen` para los indicadores y `Hallazgos` para los cinco casos señalados.
-5. Revisar `Solución` para ver las fórmulas de ejemplo.
+## How to Review the Project
+
+1. Download and open `FinTech_Calidad_Datos_50_Portafolio.xlsx` in Microsoft Excel.
+2. Read `Instrucciones` for the exercise goals and rules.
+3. Inspect `Pagos_50_Limpio` for cleaned records and validation checks.
+4. Review `Resumen` for metrics and `Hallazgos` for the five flagged records.
+5. Consult `Solución` for formula examples.
 
 ---
 
-*Proyecto de aprendizaje y portafolio personal — limpieza y calidad de datos con Excel.*
+*Personal learning and portfolio project — Excel data cleaning and data quality.*
